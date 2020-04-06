@@ -1,25 +1,7 @@
-import { Router } from "express";
+import { Router } from 'express';
+import { todos } from './data';
 
 const router = Router();
-
-enum Status {
-    OPEN = 'open',
-    PROGRESS = 'progress',
-    COMPLETE = 'complete',
-}
-
-interface TodoItem {
-    status: Status;
-    title: string;
-}
-
-let todos: TodoItem[] = [{
-    status: Status.PROGRESS,
-    title: 'Make a todo list',
-}, {
-    status: Status.OPEN,
-    title: 'Learn some nodejs',
-}];
 
 router.get('/', (req, res) => {
     res.setHeader('Content-Type', 'application/json');
