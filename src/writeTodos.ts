@@ -6,10 +6,10 @@ const router = Router();
 
 router.use(bodyParser.json());
 
-const validStatuses = Object.keys(Status).map((k: any) => (Status as any)[k]);
+const validStatuses = Object.values(Status);
 
-function isValidStatus(status: string): status is Status {
-    return validStatuses.includes(status)
+function isValidStatus(status: any): status is Status {
+    return validStatuses.includes(status);
 }
 
 function isTodoItem(obj: any): obj is TodoItem {
