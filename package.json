@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -p . && node out/main.js"
+    "start": "tsc -p . && node out/main.js",
+    "watch": "tsc -p . --watch",
+    "start:forever": "forever start -w --watchDirectory out out/main.js",
+    "stop:forever": "forever stop out/main.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "forever": "^1.0.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
